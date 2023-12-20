@@ -41,7 +41,7 @@ namespace Foreveryone.Controllers
       [HttpPost]
       public async Task<ActionResult> Post(Player player)
       {
-         var playerExist = await context.Players.AnyAsync(x => x.Nombre == player.Nombre)
+         var playerExist = await context.Players.AnyAsync(x => x.Nombre == player.Nombre);
          if (playerExist)
          {
             return BadRequest("Ya existe un jugador con ese nombre");
